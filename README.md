@@ -25,7 +25,7 @@
 - [Semaine 6 : Fonctions de tests, fonctions plus élaborées, pratiques des structures de contrôle imbriquées](./Semaine6/)
 - [Semaine 7 : Première structure de données : le tableau](./Semaine7/)
 - [Semaine 8 : Entrainement sur les tableaux](./Semaine8/)
-
+---
 - [DS2 (tout depuis le début jusqu'aux tableaux mono-dimensionnels)](./DS2/)
 
 ### Environnement de développement
