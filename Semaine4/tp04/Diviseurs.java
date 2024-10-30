@@ -6,13 +6,13 @@ class Diviseurs extends Program {
 
         int saisie = readInt();
         int parfait = 0;
-        for(int i = saisie; i>0; i = i-1){
-            if (saisie%i == 0) {
+        for(int i = saisie; i > 0; i--){
+            if (saisie % i == 0) {
                 print(i + " ");
-                parfait=parfait+i;
+                parfait = parfait + i;
             }
         }
-        if (parfait == 2*saisie) {
+        if (parfait == 2 * saisie) {
             println("Nombre parfait !");
         }
     }
