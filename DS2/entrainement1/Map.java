@@ -53,7 +53,7 @@ class Map extends Program {
     String toString (int[] tab) {
         String resultat = "";
         for (int i = 0; i < length(tab); i = i+1) {
-            // élément de l'entée: tab[i]
+            // élément de l'entrée: tab[i]
             // élément de la sortie: la chaine ajoutée à resultat
             resultat = resultat + tab[i] + " ";
         }
@@ -98,8 +98,11 @@ class Map extends Program {
     // Étant donné un nombre entier, retourner sa table de multiplication (càd ses multiples par les nombre de 1 à 10)
     // sous forme d'une chaine de caractères, les multiples séparés par des espaces
     String tableMultiplication (int n) {
-        println("tab mult");
-        return "";
+        String resultat = "";
+        for (int i = 1; i <= 10; i++){
+            resultat = resultat + (n * i) + " ";
+        }
+        return resultat;
     }
 
     
@@ -113,9 +116,16 @@ class Map extends Program {
     // Étant donné un tableau d'entiers tab, retourner un tableau dont les valeurs 
     // sont les valeurs absolues des valeurs dans tab
     int[] valeursAbsolues (int[] tab) {
-        return new int[0];
+        int[] resultat = new int[length(tab)];
+        for (int i = 0; i < length(tab); i++) {
+            if (tab[i] < 0) {
+                resultat[i] = -tab[i];
+            } else {
+                resultat[i] = tab[i];
+            }
+        }
+        return resultat;
     }
-
 
     // -------------------------------------------------
     // application d'un bonus
@@ -128,7 +138,16 @@ class Map extends Program {
     // La fonction prend en entrée un tableau d'entiers et produit en sortie un tableau où chaque entier est augmenté de 2
     // Si la note ainsi obtenue est supérieure à 20, on la ramène à 20.
     int[] bonus (int[] tab) {
-        return new int[0];
+        int[] resultat = new int[length(tab)]; // Créer un tableau de même taille
+        for (int i = 0; i < length(tab); i++) { //Pour chaque note dans tab, on augmente la note de 2
+            int nouvelleNote = tab[i] + 2; // Augmenter la note de 2
+            if (nouvelleNote > 20) {
+                resultat[i] = 20; // Ramener à 20 si la note dépasse 20
+            } else {
+                resultat[i] = nouvelleNote; // Sinon, garder la nouvelle note
+            }
+        }
+        return resultat; // Retourner le tableau des notes avec bonus
     }
 
     // -------------------------------------------------
@@ -144,6 +163,27 @@ class Map extends Program {
     // Vous devriez d'abord (re)définir les fonctions char enMinuscule (char car) et String phraseEnMin(String phrase)
     // de l'Ex. 1 TD 5, qui vous utiliserez pour passer en minuscules les éléments du tableau.
     String[] tabEnMinuscules(String[] tab) {
-        return new String[0];
+        String[] resultat = new String[length(tab)]; // Créer un tableau de même taille
+        for (int i = 0; i < length(tab); i++) {
+            resultat[i] = phraseEnMin(tab[i]); // Convertir chaque chaîne en minuscules
+        }
+        return resultat; // Retourner le tableau des chaînes en minuscules
+    }
+
+    // Fonction pour convertir un caractère en minuscule
+    char enMinuscule(char car) {
+        if (car >= 'A' && car <= 'Z') {
+            return (char) (car + 32); // Convertir en minuscule
+        }
+        return car; // Retourner le caractère tel quel s'il n'est pas majuscule
+    }
+
+    // Fonction pour convertir une phrase en minuscules
+    String phraseEnMin(String phrase) {
+        String resultat = "";
+        for (int i = 0; i < length(phrase); i++) {
+            resultat += enMinuscule(charAt(phrase, i)); // Convertir chaque caractère
+        }
+        return resultat; // Retourner la phrase en minuscules
     }
 }
