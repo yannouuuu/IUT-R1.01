@@ -2,7 +2,7 @@
 class AffichageTableau extends Program {
     String toString(int[] tab) {
         String resultat="";
-        for (int i=0; i < length(tab);i=i+1) {
+        for (int i = 0; i < length(tab); i++) {
             resultat += tab[i]+" ";
 
         }
@@ -11,7 +11,7 @@ class AffichageTableau extends Program {
 
     String toString(String[] tab) {
         String chaine = "";
-        for(int i=0; i<length(tab); i++) {
+        for(int i = 0; i < length(tab); i++) {
             chaine += tab[i]+" ";
         }
         return chaine;

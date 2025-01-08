@@ -18,14 +18,14 @@ class nbOccurence extends Program {
     int[] frequences (String[] motsCles, String[] mots) {
         int [] tab = new int [length(motsCles)];
         for (int i = 0; i < length(motsCles); i++) {
-            tab[i]=nbFois(mots, motsCles[i]);
+            tab[i] = nbFois(mots, motsCles[i]);
         }
         return tab;
     }
 
     String[] motsDifferents (String[] mots) {
         String[] motsDiff = new String[length(mots)];
-        for (int i = 0; i < length(motsDiff); i++) {
+        for (int i = 0; i < length(motsDiff) ; i++) {
             motsDiff[i] = "";
         }
         int indiceDiff=0;
